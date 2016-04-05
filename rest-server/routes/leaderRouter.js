@@ -43,7 +43,7 @@ leaderRouter.route('/:leaderId')
 })
 
 .put(function(req, res, next){
-  Leader.findByIdAndUpdate(req.params.leaderId, {$set:req.body}, {new:true}, function(err, leader)){
+  Leader.findByIdAndUpdate(req.params.leaderId, {$set:req.body}, {new:true}, function(err, leader){
     if (err) throw err;
     res.json(leader);
   });

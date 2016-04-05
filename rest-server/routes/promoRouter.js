@@ -42,7 +42,7 @@ promoRouter.route('/:promoId')
 })
 
 .put(function(req, res, next){
-  Promo.findByIdAndUpdate(req.params.promoId, {$set:req.body}, {new:true}, function(err, promo)){
+  Promo.findByIdAndUpdate(req.params.promoId, {$set:req.body}, {new:true}, function(err, promo){
     if (err) throw err;
     res.json(promo);
   });
