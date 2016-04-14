@@ -34,3 +34,13 @@ exports.verifyOrdinaryUser = function (req, res, next) {
         return next(err);
     }
 };
+
+exports.verifyAdminUser = function(req,res,next){
+    if(req.decoded._doc.admin != true)  {
+      var err = new Error('you have no permission');
+      err.status = 401;
+      return next(err);
+    }else {
+        return next();
+    }
+};
