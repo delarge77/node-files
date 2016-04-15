@@ -22,8 +22,8 @@ leaderRouter.route('/')
     console.log('Leader created');
     var id = leader._id;
     res.writeHead(200,{'Content-Type':'text/plain'});
+    res.end('Added the dish with id:' + id);
   });
-  res.end('Added the dish with id:' + id);
 })
 
 .delete(function(req, res, next){

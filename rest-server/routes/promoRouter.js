@@ -21,8 +21,8 @@ promoRouter.route('/')
     console.log('Promotion created');
     var id = promo._id;
     res.writeHead(200,{'Content-Type':'text/plain'});
+    res.end('Added the Promotion with id:' + id);
   });
-  res.end('Added the Promotion with id:' + id);
 })
 
 .delete(function(req, res, next){
