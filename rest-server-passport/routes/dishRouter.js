@@ -22,9 +22,9 @@ dishRouter.route('/')
     if (err) throw err;
     console.log('Dish created');
     var id = dish._id;
+    res.json('Added the dish with id:' + id);
     res.writeHead(200,{'Content-Type':'text/plain'});
   });
-  res.end('Added the dish with id:' + id);
 })
 
 .delete(Verify.verifyOrdinaryUser, Verify.verifyAdminUser, function(req, res, next){
